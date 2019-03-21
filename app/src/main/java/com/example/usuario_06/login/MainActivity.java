@@ -1,5 +1,6 @@
 package com.example.usuario_06.login;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,9 +26,13 @@ public class MainActivity extends AppCompatActivity {
         btnValidar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent iVentana;
                 if(tUsuario.getText().toString().equals("Luis") && tCont.getText().toString().equals("Hola")){
-                    
+                    iVentana = new Intent(getBaseContext(),Correcto.class);
+                }else{
+                    iVentana = new Intent(getBaseContext(),Error.class);
                 }
+                startActivity(iVentana);
             }
         });
 
